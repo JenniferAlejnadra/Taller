@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //1)	¿Qué es JavaScript?
+
+        /* Es un lenguaje de programacion que los desarrolladores utilizan para hacer paginas web interactivas,
+        desde actualizar fuentes de redes sociales a mostrar animaciones y mapas interactivos, las funciones de JavaScript
+        pueden mejorar la experiencia de un sitio web. */ 
+
+        //2)	Variables y tipos de datos (exprese ejemplos)
+
+        /* DECLARANTE DE VARIABLES
+        var: Declara una variable, opcionalmente la inicia a un valor.
+        let: Declara una variable local con ámbito de bloque, opcionalmente la inicia a un valor.
+        const: Declara un nombre de constante de solo lectura y ámbito de bloque.
+
+        VARIABLES Y DATOS
+        Boolean: variables que puedan contener un valor de verdadero o falso. (true o false).
+        null: en el caso de que la variable no tome ningún valor.
+        undefined: cuando la variable no ha sido inicializada tiene un valor indefinido.
+        Number: para los números enteros o decimales. (8 o 3.1416)
+        BigInt: es un tipo para almacenar números grandes más allá del tamaño de Number.
+        String: para las cadenas de texto. (“Soy una cadena”)
+        Symbol: para valores que sean únicos e inmutables.
+        Object: para cuando la variable contiene un objeto.
+        Function: podremos asignar a una variable una función.
+
+        Boolean = true
+        null = null
+        undefined = undefined
+        Numer = 2
+        BigInt = 19421542523586778686
+        String = "Hola Mundo"
+        Symbol = ←
+        As Object
+        function square(number)
+        */
+        //3)	En JavaScript, se declaran variables utilizando la palabra clave let, const (introducida en ECMAScript 6) o var (forma antigua, no se recomienda su uso). Exprese ejemplos y diga porque no se tiene tan en cuenta la palabra reservada var.
+        let pepe = 1; 
+        var hola = 3;
+        const como = 2;
+
+        /*
+        La palabra reservada var tiene algunas funciones ocultas que pueden dañar nuestro código sin que lo sepamos,
+        dicha palabra nos permite usar variables… ¡sin antes ser declarada!, esto sucede gracias a un proceso llamado hoisting
+        */
+        console.log(mensaje) //imprimira undefined
+        var mensaje = 'Hola mundo'
+        /*
+        Internamente lo que hizo javascript aqui fue crear la variable por nosotros antes de que nosotros la declararamos,
+        y como no hay nada imprime undefined. Este comportamiento puede ser peligroso, porque nos puede definir una variable
+        es un alcance que no queremos ocasionando bugs.
+        */
+
+        //4)	Explicar los operadores aritméticos, de asignación y de comparación, Mostrar ejemplos de uso de operadores en expresiones JavaScript.
+        /*
+        ASIGNACION:
+        Asignación	x = y Ejemplo: x = y
+        Asignación de adición	x += y	Ejemplo: x = x + y
+        Asignación de resta	x -= y	Ejemplo: x = x - y
+        Asignación de multiplicación	x *= y	Ejemplo: x = x * y
+        Asignación de división	x /= y	Ejemplo: x = x / y
+        Asignación de residuo	x %= y	Ejemplo: x = x % y
+        Asignación de exponenciación	x **= y	Ejemplo: x = x ** y
+        Asignación de desplazamiento a la izquierda	x <<= y	Ejemplo: x = x << y
+        Asignación de desplazamiento a la derecha	x >>= y	Ejemplo: x = x >> y
+        Asignación de desplazamiento a la derecha sin signo	x >>>= y	Ejemplo: x = x >>> y
+        Asignación AND bit a bit	x &= y	Ejemplo: x = x & y
+        Asignación XOR bit a bit	x ^= y	Ejemplo: x = x ^ y
+        Asignación OR bit a bit	x |= y	Ejemplo: x = x | y
+        Asignación AND lógico	x &&= y	Ejemplo: x && (x = y)
+        Asignación OR lógico	x ||= y	Ejemplo: x || (x = y)
+        Asignación de anulación lógica	x ??= y	Ejemplo: x ?? (x = y)
+
+        COMPARACION:
+        Igual (==)	Devuelve true si los operandos son iguales. Ejemplo: 3 == var1 "3" == var 13 == '3'
+        No es igual (!=)	Devuelve true si los operandos no son iguales. Ejemplo:	var1 != 4 var2 != "3"
+        Estrictamente igual (===)	Devuelve true si los operandos son iguales y del mismo tipo. Consulta también Object.is y similitud en JS. Ejemplo:	3 === var1
+        Desigualdad estricta (!==)	Devuelve true si los operandos son del mismo tipo pero no iguales, o son de diferente tipo.	Ejemplo: var1 !== "3" 3 !== '3'
+        Mayor que (>)	Devuelve true si el operando izquierdo es mayor que el operando derecho. Ejemplo: var2 > var1 "12" > 2
+        Mayor o igual que (>=)	Devuelve true si el operando izquierdo es mayor o igual que el operando derecho. Ejemplo: var2 >= var1 var1 >= 3
+        Menor que (<)	Devuelve true si el operando izquierdo es menor que el operando derecho. Ejemplo: var1 < var2 "2" < 12
+        Menor o igual (<=)	Devuelve true si el operando izquierdo es menor o igual que el operando derecho. Ejemplo: var1 <= var2 var2 <= 5
+
+        ARITMETICOS:
+        Residuo (%)	Operador binario. Devuelve el resto entero de dividir los dos operandos. Ejemplo: 12 % 5 devuelve 2.
+        Incremento (++)	Operador unario. Agrega uno a su operando. Si se usa como operador prefijo (++x), devuelve el valor de su operando después de agregar uno; si se usa como operador sufijo (x++), devuelve el valor de su operando antes de agregar uno. Ejemplo: Si x es 3, ++x establece x en 4 y devuelve 4, mientras que x++ devuelve 3 y , solo entonces, establece x en 4.
+        Decremento (--)	Operador unario. Resta uno de su operando. El valor de retorno es análogo al del operador de incremento. Ejemplo: Si x es 3, entonces --x establece x en 2 y devuelve 2, mientras que x-- devuelve 3 y, solo entonces, establece x en 2.
+        Negación unaria (-)	Operador unario. Devuelve la negación de su operando. Ejemplo:	Si x es 3, entonces -x devuelve -3.
+        Positivo unario (+)	Operador unario. Intenta convertir el operando en un número, si aún no lo es. Ejemplo:	+"3" devuelve 3. +true devuelve 1.
+        Operador de exponenciación (**)	Calcula la base a la potencia de exponente, es decir, baseexponente. Ejemplo: 2 ** 3 returns 8. 10 ** -1 returns 0.1.
+        */
+        //5)	Presentar las estructuras de control: condicionales (if, else if, else) y bucles (for, while), mostrar ejemplos prácticos de cómo utilizar estas estructuras para controlar el flujo de ejecución del programa.
+        if (pepe = 1){
+            document.write("Buenas noches");
+        }
+        else if (pepe = 2){
+            document.write("Buenos dias");
+        }
+        else {
+            document.write("Buenas tardes");
+        }
+
+        do {
+            document.write("pepe");
+        } while (pepe = 2);
+
+        for (var i = 0; i < 9; i++) {
+            document.write("ppepe");
+            
+        }
+        //6)	Entregue al menos 3 ejemplos usando funciones en JavaScript y su importancia para reutilizar código.
+        /* EJEMPLOS:
+        <html>
+        <title>trabajos</TITLE>
+        <head>
+        <script>
+        funcion abrir_ventana()
+        {
+          window.open("");
+
+        }
+        funcion para_abrir()
+        {
+            cleartimeout(pop);
+
+        }
+        pop=setInterval("abrir_ventana()"3000);
+        */
+       /* <script>
+        {function print() {
+            alert("Hola gente");
+        }
+        /* <script>
+         var age = 18;
+         var ella = 'el señor';
+         var el = 'la señora';
+         document.write(ella + " tiene "+ age + "años\n" );
+         document.write(el + " tiene " + age + "años");
+         */
+
+
+        // los comentarios en línea que comienzan con una doble barra: //, 
+        // los comentarios multilínea, que comienzan con 
+        
+        /* 
+        
+        y terminan con
+        
+        */
+    </script>
+</body>
+</html>
